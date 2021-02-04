@@ -1,6 +1,18 @@
+/*  */
+
 .App {
   text-align: center;
   
   font-family: 'Press Start 2P', cursive; /* This is from google fonts, put it here because it encompasses the whole single page app */
   /* This basically says to do Press start 2P font first, but if it doesnt work then do cursive */
 }
+
+.jumbotron {
+  background-color:rgb(57,74,196) !important; 
+  /* So bootstrap comes with a lot of default styling that makes the background still apear gray, thats why we use !important */
+  color: rgb(247,215,0); /* This is for title color */
+  margin-bottom: 0px !important; /* Decreasing jumbo margin */
+  border-radius: 0px !important; /* making corners not rounded */ 
+}
+
+
