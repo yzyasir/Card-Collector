@@ -1,15 +1,19 @@
 import './App.css';
 import "nes.css/css/nes.min.css"; //for the nes styles (Just google nes.css)
 import 'bootstrap/dist/css/bootstrap.min.css'; //for bootstrap
+
+import CardForm from './components/CardForm'; // Need to import CardForm from components
+import Card from './components/Card';
 {/*  */}
+
 function App() {
   return (
     <div className="App">
       <h1 className="jumbotron"> <i class="nes-ash"></i> Gotta Catch 'Em All <i class="nes-pokeball"></i> </h1> {/* Jumbotron is from bootstrap makes a gray backgeound for  */}
       <div className="row">
         <div className="col-sm-1 bg-info" style={{ height: '200px' }}></div> {/* This is based off of the grid system */}
-        <div className="col-sm-3">Form Goes Here</div>
-        <div className="col-sm-8">Cards go here</div>
+        <div className="col-sm-3"><CardForm/></div> {/* Added CardForm component here */}
+        <div className="col-sm-8"><Card/></div>
       </div>
     </div>
   );
