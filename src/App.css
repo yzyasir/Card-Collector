@@ -15,4 +15,6 @@
   border-radius: 0px !important; /* making corners not rounded */ 
 }
 
-
+.side-color {
+  background-color:rgb(57,74,196) !important;
+}

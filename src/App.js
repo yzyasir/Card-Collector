@@ -11,8 +11,8 @@ function App() {
     <div className="App">
       <h1 className="jumbotron"> <i class="nes-ash"></i> Gotta Catch 'Em All <i class="nes-pokeball"></i> </h1> {/* Jumbotron is from bootstrap makes a gray backgeound for  */}
       <div className="row">
-        <div className="col-sm-1 bg-info" style={{ height: '200px' }}></div> {/* This is based off of the grid system */}
-        <div className="col-sm-3"><CardForm/></div> {/* Added CardForm component here */}
+        <div className="col-sm-1 side-color" ></div> {/* This is based off of the grid system */}
+        <div className="col-sm-3"><h4>Add a card</h4><CardForm/></div> {/* Added CardForm component here */}
         <div className="col-sm-8"><h4>Cards You Have</h4><Card/><Card/></div>
       </div>
     </div>
