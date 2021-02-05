@@ -13,7 +13,7 @@ function App() {
       <div className="row">
         <div className="col-sm-1 bg-info" style={{ height: '200px' }}></div> {/* This is based off of the grid system */}
         <div className="col-sm-3"><CardForm/></div> {/* Added CardForm component here */}
-        <div className="col-sm-8"><Card/></div>
+        <div className="col-sm-8"><h4>Cards You Have</h4><Card/><Card/></div>
       </div>
     </div>
   );
