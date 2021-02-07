@@ -29,15 +29,7 @@ const CardForm = () => {
             </div>
             <div class="form-group">
                 <label>Holographic?</label>
-                <input type="checkbox" 
-
-                // We do "checked here because if you look at the documentation thats what is says to use, and we have to set it to our setState"
-                checked={cardHolo} 
-                
-                //e is just the event, e.target.checked is basically what our target has updated to
-                onChange={(e)
-                =>setCardHolo(e.target.checked)} className="form-control"
-                    />
+                <input type="checkbox" checked={cardHolo} onChange={(e)=>setCardHolo(e.target.checked)} className="form-control" />
             </div>
             <button type="button" className="nes-btn is-warning">Submit</button>
         </form>
