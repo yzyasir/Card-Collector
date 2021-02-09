@@ -29,7 +29,9 @@ const CardForm = () => {
             </div>
             <div class="form-group">
                 <label>Holographic?</label>
-                <input type="checkbox" checked={cardHolo} onChange={(e)=>setCardHolo(e.target.checked)} className="form-control" />
+                <input type="checkbox" checked={cardHolo} onChange={(e)=>setCardHolo(e.target.checked)} className="form-control" // so for some reason bringing it all onto the first line fixed the error
+                // e.target.checked 
+                />
             </div>
             <button type="button" className="nes-btn is-warning">Submit</button>
         </form>
