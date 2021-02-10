@@ -12,6 +12,15 @@ const CardForm = () => {
     const addNewCard = (e) => {
         e.preventDefault(); //this method cancels the event if it is cancelable, useful for submitting to prevent submitting a form
 
+        // here we are calling on the prop and passing it a thing and the thing that is going to be passed is a newCard
+        this.props.makeCard({
+            Name: cardName, 
+            URL: cardURL,
+            Holo: cardHolo,
+            Own: false // here we are setting the owning of the card to false
+          }) 
+          // we pass the data throughout as an object, thats why we use it above as that 
+        console.log("*************************************************")
         //send form data to database here, for now just keep it frontend, basically one component is talking to the parent, and that component is talking to another, here we pass data around
     }
 
