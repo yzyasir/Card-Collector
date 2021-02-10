@@ -6,13 +6,19 @@ const CardForm = () => {
     // These must be inside the const CardForm
     const [cardName, setCardName] = useState("");
     const [cardURL, setCardURL] = useState("");
-    const [cardHolo, setCardHolo] = useState(false); // Set it to false since we do not want them to be holo unless explicitly stated
+    const [cardHolo, setCardHolo] = useState(false); // Set it to false by default since we do not want them to be holo unless explicitly stated
     // NOTE: To check if state is updating, use inspect, then check components
+
+    const addNewCard = (e) => {
+        e.preventDefault(); //this method cancels the event if it is cancelable, useful for submitting to prevent submitting a form
+
+        //send form data to database here, for now just keep it frontend, basically one component is talking to the parent, and that component is talking to another, here we pass data around
+    }
 
     return(
         // Need to place everything in the div, react has a habit of giving an error or giving errors when not everything is complete
         <> 
-        <form>
+        <form onSubmit={addNewCard}>
             <div class="form-group">
                 <label>Card Name</label>
                 <input type="text" className="nes-input is-warning" onChange={
@@ -30,7 +36,10 @@ const CardForm = () => {
             <div class="form-group">
                 <label>Holographic?</label>
                 <input type="checkbox" checked={cardHolo} onChange={(e)=>setCardHolo(e.target.checked)} className="form-control" // so for some reason bringing it all onto the first line fixed the error
-                // e.target.checked 
+                // cardHolo is basically going to be either true of false for our state
+                //we then give checked that boolean
+                //then we give the e (event) the e.target of checked (which van be boolean or not)
+                //then check on inspect tool is the state is updating
                 />
             </div>
             <button type="button" className="nes-btn is-warning">Submit</button>
