@@ -14,13 +14,14 @@ const cardStyle = {
     padding: '10px'
 }
 
-const Card = () => {
+const Card = (props) => {
     return(
         // Need to place everything in the div, react has a habit of giving an error or giving errors when not everything is complete
         <div style={cardStyle} > 
-            <img style={imgStyle} src="https://rarest.org/wp-content/uploads/2018/10/shadowless-first-edition-charizard.jpg" alt="One of Yasir's favorite pokemon cards" />
+        {/* we are using props to display the card */}
+            <img style={imgStyle} src="props.myCard.URL" alt="One of Yasir's favorite pokemon cards" /> 
             <hr/> {/* This tag basically just makes a line, I used it for aethetics */}
-            <h5>Charizard</h5>
+            <h5>{props.myCard.Name}</h5>
             <h6>Holographic</h6>
             <h6>Collected?</h6>
             <hr/>

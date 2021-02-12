@@ -31,8 +31,8 @@ function App() {
         <div className="col-sm-8"><h4>Cards You Have</h4>
         {// here we enter our mapping function, we use mapping through in react instead of for looping, item will be object and i is the index
         // Add NOTES: 
-          cardList.map((item, i) => <Card />) //basically everytime we cycle through, we create a card comeponent 
-        
+          cardList.map((item, i) => <Card myCard={item}/>) //basically everytime we cycle through, we create a card comeponent 
+          // item is the thing we are looping through
         } 
         </div>
       </div>
