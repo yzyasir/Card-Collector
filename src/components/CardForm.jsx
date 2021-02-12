@@ -2,7 +2,7 @@
 import React, { useState } from 'react'; // imports all the nice features from react that we are going to make use of
 
 // In a component everything is kinda shoved into a const basically
-const CardForm = () => {
+const CardForm = (props) => { // NOTE: Props needed to be passed through the component!!!!
     // These must be inside the const CardForm
     const [cardName, setCardName] = useState("");
     const [cardURL, setCardURL] = useState("");
@@ -13,7 +13,7 @@ const CardForm = () => {
         e.preventDefault(); //this method cancels the event if it is cancelable, useful for submitting to prevent submitting a form
 
         // here we are calling on the prop and passing it a thing and the thing that is going to be passed is a newCard
-        this.props.makeCard({
+        props.makeCard({
             Name: cardName, 
             URL: cardURL,
             Holo: cardHolo,

@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'; //for bootstrap
 import CardForm from './components/CardForm'; // Need to import CardForm from components
 import Card from './components/Card';
 import {useState} from 'react';
-{/*  */}
 
 function App() {
 
@@ -17,7 +16,7 @@ function App() {
 
   const createCard = (newCard) => { //made this anon function to take in whatever gets passed along from card form, that data is basically a new card (so we name it that)
     setCardList([...cardList, newCard]) // to add the newCard to the existing card list we use the spread operator, this will add the new card to the list of set cards
-    
+    // remember we use setState to update
     // we pass the data throughout as an object, thats why we use it above as that, arrays are objects too?
   }
 
@@ -31,7 +30,7 @@ function App() {
 
         <div className="col-sm-8"><h4>Cards You Have</h4>
         {// here we enter our mapping function, we use mapping through in react instead of for looping, item will be object and i is the index
-          
+        // Add NOTES: 
           cardList.map((item, i) => <Card />) //basically everytime we cycle through, we create a card comeponent 
         
         } 
