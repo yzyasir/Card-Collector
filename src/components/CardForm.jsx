@@ -13,7 +13,7 @@ const CardForm = (props) => { // NOTE: Props needed to be passed through the com
         e.preventDefault(); //this method cancels the event if it is cancelable, useful for submitting to prevent submitting a form
 
         // here we are calling on the prop and passing it a thing and the thing that is going to be passed is a newCard
-        props.makeCard({
+        props.makeCard({ // made an object here
             Name: cardName, 
             URL: cardURL,
             Holo: cardHolo,
