@@ -16,6 +16,6 @@ app.use(express.json());
 require("./server/config/mongoose.config"); // This is needed, after doing config you can use this to check if mongo db is connected
 // NOTE: Before turning on the server, go to package.json and change node to nodemon in scripts section
 // I didnt do it for this project but check it out for the next one
-// After all that, do nodemon server.js in another terminal
+// After all that, do nodemon server.js in another terminal to start the backend, need it on to test apis through postman
 
 // NEXT: After all of this what we do next is import our config and routes
