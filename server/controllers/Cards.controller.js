@@ -35,6 +35,6 @@ module.exports.updateCard = (req, res) => {
             url: req.body.url
         }
     }, {runValidators: true})
-        .then(updatedCard => res.json({review: updatedCard}))
+        .then(updatedCard => res.json({card: updatedCard}))
         .catch(err => res.json({message: "Hey the update failed", error: err}))
 }
