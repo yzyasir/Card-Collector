@@ -2,19 +2,20 @@
 
 const Card = require("../models/Cards.model"); // Need to import the models into the controllers file
 
+// Here we can make our module.export library 
 module.exports.createCard = (req, res) => {
     Card.create(req.body)
         .then(newCard => res.json({message: "Success, you submitted a card", card: newCard}))
         .catch(err => res.json({message: "Hey, something went wrong", error: err}))
 }
 
-module.exports.findAllCard = (req, res) => {
-    Card.find(req.body)
+module.exports.findAllCards = (req, res) => {
+    Card.find()
     .then(allCard => res.json({message: "Success, we found all cards", review: allCard}))
     .catch(err => res.json({message: "Hey, something went wrong", error: err}))
 }
 
-module.exports.deleteOneCard = (req, res) => {
+module.exports.destroy = (req, res) => {
     Card.remove({_id: req.params.id})
     .then(res.json({message: "Success, you deleted a card"}))
     .catch(err => res.json({message: "Hey, something went wrong", error: err}))
@@ -29,7 +30,7 @@ module.exports.findOneCard = (req, res) => {
 }
 
 module.exports.updateCard = (req, res) => {
-    Card.update({_id: req.params.id}, {
+    Card.findOneAndUpdate({_id: req.params.id}, {
         $set: {
             name: req.body.name,
             url: req.body.url
@@ -38,3 +39,17 @@ module.exports.updateCard = (req, res) => {
         .then(updatedCard => res.json({card: updatedCard}))
         .catch(err => res.json({message: "Hey the update failed", error: err}))
 }
+
+// Can also write like this: (All in one object)
+
+// module.exports = {
+// index: (req,res) => {
+// 
+// },
+// show: (req,res) => {
+// 
+// },
+// update:(req,res) => {
+// 
+// }
+// }

@@ -18,4 +18,7 @@ require("./server/config/mongoose.config"); // This is needed, after doing confi
 // I didnt do it for this project but check it out for the next one
 // After all that, do nodemon server.js in another terminal to start the backend, need it on to test apis through postman
 
-// NEXT: After all of this what we do next is import our config and routes
+// NEXT: After all of this what we do next is we "require" our config and routes
+require('./server/config/mongoose.config');
+require('./server/routes/Card.routes');
+// This step is done after everything else ^^^

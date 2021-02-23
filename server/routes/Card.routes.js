@@ -4,10 +4,12 @@ const CardController = require("../controllers/Cards.controller"); // Need to ad
 
 //Here I will be calling the functions from the file
 module.exports = app => {
-    app.post("/api/new/card/:id", Card.controller.createCard)
-    app.get("/api/getAll/cards", CardController.findAllCard)
-    app.delete("/api/deleteOne/card/:id", CardController.deleteOneCard)
+    app.post("/api/new/card", Card.controller.createCard)
+    app.get("/api/getAll/cards", CardController.findAllCards)
+    app.delete("/api/deleteOne/card/:id", CardController.destroy)
     // _______________________________________________________
     app.put("/api/update/card/:id", CardController.updateCard)
     app.get("/api/findOne/card/:id", CardController.findOneCard)
 }
+
+// Include cards in the api route to help distinguish from other routes if the project grows
