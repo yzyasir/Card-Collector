@@ -5,13 +5,13 @@ const Card = require("../models/Cards.model"); // Need to import the models into
 // Here we can make our module.export library 
 module.exports.createCard = (req, res) => {
     Card.create(req.body)
-        .then(newCard => res.json({message: "Success, you submitted a card", card: newCard}))
+        .then(newCard => res.json({message: "Success, you submitted a card", results: newCard}))
         .catch(err => res.json({message: "Hey, something went wrong", error: err}))
 }
 
 module.exports.findAllCards = (req, res) => {
     Card.find()
-    .then(allCard => res.json({message: "Success, we found all cards", review: allCard}))
+    .then(allCard => res.json({message: "Success, we found all cards", results: allCard}))
     .catch(err => res.json({message: "Hey, something went wrong", error: err}))
 }
 
@@ -25,7 +25,7 @@ module.exports.destroy = (req, res) => {
 // Adding these because they may prove useful after updating this project
 module.exports.findOneCard = (req, res) => {
     Card.findOne({_id: req.params.id})
-    .then(oneCard => res.json({message: "Success, you found one card", card: oneCard}))
+    .then(oneCard => res.json({message: "Success, you found one card", results: oneCard}))
     .catch(err => res.json({message: "Hey something went wrong", error: err}))
 }
 
@@ -36,7 +36,7 @@ module.exports.updateCard = (req, res) => {
             url: req.body.url
         }
     }, {runValidators: true})
-        .then(updatedCard => res.json({card: updatedCard}))
+        .then(updatedCard => res.json({results: updatedCard}))
         .catch(err => res.json({message: "Hey the update failed", error: err}))
 }
 

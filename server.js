@@ -22,3 +22,5 @@ require("./server/config/mongoose.config"); // This is needed, after doing confi
 require('./server/config/mongoose.config');
 require('./server/routes/Card.routes');
 // This step is done after everything else ^^^
+
+// TO RUN SERVER: nodemon (or node) server.js
