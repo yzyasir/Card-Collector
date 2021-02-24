@@ -4,7 +4,7 @@ const CardController = require("../controllers/Cards.controller"); // Need to ad
 
 //Here I will be calling the functions from the file
 module.exports = app => {
-    app.post("/api/new/card", Card.controller.createCard)
+    app.post("/api/new/card", CardController.createCard)
     app.get("/api/getAll/cards", CardController.findAllCards)
     app.delete("/api/deleteOne/card/:id", CardController.destroy)
     // _______________________________________________________

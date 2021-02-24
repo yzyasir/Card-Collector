@@ -20,7 +20,12 @@ require("./server/config/mongoose.config"); // This is needed, after doing confi
 
 // NEXT: After all of this what we do next is we "require" our config and routes
 require('./server/config/mongoose.config');
-require('./server/routes/Card.routes');
+const cardRoutes = require('./server/routes/Card.routes');
+cardRoutes(app); 
+// TODO: Blerb add note
+
 // This step is done after everything else ^^^
 
 // TO RUN SERVER: nodemon (or node) server.js
+
+// TODO: jira, look it up

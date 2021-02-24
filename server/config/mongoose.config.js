@@ -3,8 +3,8 @@
 
 const mongoose = require("mongoose");
 
-const database = "cards_db" // see how these are not quotes but backticks for the ${}
-mongoose.connect(`mongodb://localhost/${database}`, { //must change the db name from project to project
+// const database = "cards_db" // see how these are not quotes but backticks for the ${}
+mongoose.connect(`mongodb://localhost/cards_2`, { //must change the db name from project to project
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(res => console.log("It works bro!!!"))
