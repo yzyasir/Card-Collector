@@ -42,15 +42,6 @@ const CardForm = (props) => { // NOTE: Props needed to be passed through the com
                     // This is another way how to do onChange, I like my way, more concise 
                     /> 
             </div>
-            <div class="form-group">
-                <label>Holographic?</label>
-                <input type="checkbox" checked={cardHolo} onChange={(e)=>setCardHolo(e.target.checked)} className="form-control" // so for some reason bringing it all onto the first line fixed the error
-                // cardHolo is basically going to be either true of false for our state
-                //we then give checked that boolean
-                //then we give the e (event) the e.target of checked (which van be boolean or not)
-                //then check on inspect tool is the state is updating
-                />
-            </div>
             <button type="button" className="nes-btn is-warning">Submit</button>
         </form>
         </>

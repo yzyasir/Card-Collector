@@ -10,6 +10,10 @@ const CardSchema = new mongoose.Schema({
     url: {
         type: String,
         required: [true, "Must add the card image before submission"]
+    },
+    favoriteMove: {
+        type: String,
+        required: [true, "Must add your favorite move"]
     }
 }, 
 {

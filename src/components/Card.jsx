@@ -21,8 +21,6 @@ const Card = () => {
             <img style={imgStyle} src="https://rarest.org/wp-content/uploads/2018/10/shadowless-first-edition-charizard.jpg" alt="One of Yasir's favorite pokemon cards" />
             <hr/> {/* This tag basically just makes a line, I used it for aethetics */}
             <h5>Charizard</h5>
-            <h6>Holographic</h6>
-            <h6>Collected?</h6>
             <hr/>
         </div>
         // Need to use divs because all of my cards will be little divs displaying on my page
