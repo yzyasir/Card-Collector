@@ -25,7 +25,7 @@ function App() {
   // Now I'm editing to add db
 
     // Need to pass in diff logic for create, update, delete, etc
-    const [cardForm, setCardForm] = useState({
+    const [cardList, setCardList] = useState({
       name: "",
       url: "",
       favoriteMove: ""
@@ -35,15 +35,15 @@ function App() {
 
   const onChangeHandler = (e) => {
     e.preventDefault();
-    setCardForm({
-      ...cardForm,
+    setCardList({
+      ...cardList,
       [e.target.name]: e.target.value //this needs to be e.target.name so that the component in the form updates
     })
   }
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8000/api/new/card", cardForm)
+    axios.post("http://localhost:8000/api/new/card", cardList)
       .then(res => {
         if(res.data.error){ //this is basically asking if res.data has any errors in it
           console.log(res.data.error.errors) //this will log the errors console
@@ -61,7 +61,7 @@ function App() {
       <h1 className="jumbotron"> <i class="nes-ash"></i> Gotta Catch 'Em All <i class="nes-pokeball"></i> </h1> {/* Jumbotron is from bootstrap makes a gray backgeound for  */}
       <div className="row">
         <div className="col-sm-1 side-color"></div> {/* This is based off of the grid system */}
-        <div className="col-sm-3"><h4>Add a card</h4><CardForm makeCard={createCardFunction}/></div> {/* Added CardForm component here */}
+        <div className="col-sm-3"><h4>Add a card</h4><CardForm makeCard={onSubmitHandler} onChangeHandler={onChangeHandler} error={error}/></div> {/* Added CardForm component here */}
         {/* props are used to pass data down to a component but we will be kind of be using it to pass it up using the prop makeCard (named that way because thats what it does) */}
 
         <div className="col-sm-8"><h4>Cards You Have</h4>
