@@ -29,6 +29,7 @@ function App() {
       name: "",
       url: "",
       favoriteMove: ""
+       // we pass the data throughout as an object, thats why we use it above as that 
     })
 
   const [error, setError] = useState({});
@@ -42,7 +43,9 @@ function App() {
   }
 
   const onSubmitHandler = (e) => {
-    e.preventDefault();
+
+    e.preventDefault(); //this method cancels the event if it is cancelable, useful for submitting to prevent submitting a form
+
     axios.post("http://localhost:8000/api/new/card", cardList)
       .then(res => {
         if(res.data.error){ //this is basically asking if res.data has any errors in it
@@ -51,6 +54,9 @@ function App() {
         } else {
           console.log("On submit worked") //otherwise if all is good, let this happen
           //TODO: Add navigate to back to home page
+
+          //send form data to database here, basically one component is talking to the parent, and that component is talking to another, here we pass data around
+          // We are passing this function to form
         }
       })
       .catch(console.log("Something went wrong, this is catch error"))
@@ -64,13 +70,13 @@ function App() {
         <div className="col-sm-3"><h4>Add a card</h4><CardForm makeCard={onSubmitHandler} onChangeHandler={onChangeHandler} error={error}/></div> {/* Added CardForm component here */}
         {/* props are used to pass data down to a component but we will be kind of be using it to pass it up using the prop makeCard (named that way because thats what it does) */}
 
-        <div className="col-sm-8"><h4>Cards You Have</h4>
+        {/* <div className="col-sm-8"><h4>Cards You Have</h4>
         {// here we enter our mapping function, we use mapping through in react instead of for looping, item will be object and i is the index
         // Add NOTES: 
           cardList.map((item, i) => <Card />) //basically everytime we cycle through, we create a card comeponent 
         
         } 
-        </div>
+        </div> */}
       </div>
     </div>
   );
