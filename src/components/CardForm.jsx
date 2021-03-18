@@ -17,18 +17,39 @@ const CardForm = (props) => { // NOTE: Props needed to be passed through the com
                 <input type="text" className="nes-input is-warning" onChange={props.onSubmitHandler} value={props.name} 
                     // This is another way how to do onChange, I like my way, more concise
                     />
+                {   // We are passing our errors from the models through using props (god bless props man)
+                    props.error.name ?
+                <span>{props.error.name.message}</span>
+                : "" 
+                //TODO: Try going over this code more with Duke to understand it
+                // Needed to type out the whole thing so the error goes away
+                }
             </div>
             <div class="form-group">
                 <label>Card Image (URL Please)</label>
                 <input type="text" className="nes-input is-warning" onChange={props.onSubmitHandler} value={props.url} 
                     // This is another way how to do onChange, I like my way, more concise 
-                    /> 
+                    />
+                {   // We are passing our errors from the models through using props (god bless props man)
+                    props.error.url ?
+                <span>{props.error.url.message}</span>
+                : "" 
+                //TODO: Try going over this code more with Duke to understand it
+                // Needed to type out the whole thing so the error goes away
+                } 
             </div>
             <div class="form-group">
                 <label>Favorite</label>
                 <input type="text" className="nes-input is-warning" onChange={props.onSubmitHandler} value={props.favoriteMove} 
                     // This is another way how to do onChange, I like my way, more concise 
-                    /> 
+                    />
+                {   // We are passing our errors from the models through using props (god bless props man)
+                    props.error.favoriteMove ?
+                <span>{props.error.favoriteMove.message}</span>
+                : "" 
+                //TODO: Try going over this code more with Duke to understand it
+                // Needed to type out the whole thing so the error goes away
+                } 
             </div>
             <button type="button" className="nes-btn is-warning">Submit</button>
         </form>

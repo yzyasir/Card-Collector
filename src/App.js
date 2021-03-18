@@ -70,13 +70,13 @@ function App() {
         <div className="col-sm-3"><h4>Add a card</h4><CardForm makeCard={onSubmitHandler} onChangeHandler={onChangeHandler} error={error}/></div> {/* Added CardForm component here */}
         {/* props are used to pass data down to a component but we will be kind of be using it to pass it up using the prop makeCard (named that way because thats what it does) */}
 
-        {/* <div className="col-sm-8"><h4>Cards You Have</h4>
+        <div className="col-sm-8"><h4>Cards You Have</h4>
         {// here we enter our mapping function, we use mapping through in react instead of for looping, item will be object and i is the index
         // Add NOTES: 
           cardList.map((item, i) => <Card />) //basically everytime we cycle through, we create a card comeponent 
         
         } 
-        </div> */}
+        </div>
       </div>
     </div>
   );
