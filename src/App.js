@@ -75,11 +75,11 @@ function App() {
         {/* props are used to pass data down to a component but we will be kind of be using it to pass it up using the prop makeCard (named that way because thats what it does) */}
 
         <div className="col-sm-8"><h4>Cards You Have</h4>
-        {/* {// here we enter our mapping function, we use mapping through in react instead of for looping, item will be object and i is the index
+        {// here we enter our mapping function, we use mapping through in react instead of for looping, item will be object and i is the index
         // Add NOTES: 
-          cardList.map((item, i) => <Card />) //basically everytime we cycle through, we create a card comeponent 
+          cardList.map((item, i) => <Card />) //basically everytime we cycle through, we create a card component 
         
-        }  */}
+        } 
         </div>
       </div>
     </div>
@@ -91,5 +91,5 @@ export default App;
 // 1) npx create-react-app application-name-app, and to start the app its "npm start"
 // 2) Then you can use node package manager to install whatever you need "npm i then anything you want"
 
-// 3) To start the front end you have to do npm start
+// 3) To start the front end you have to do npm start, and for back end it is nodemon server.js
 
