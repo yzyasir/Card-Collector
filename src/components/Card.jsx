@@ -22,6 +22,7 @@ const Card = () => {
             <hr/> {/* This tag basically just makes a line, I used it for aethetics */}
             <h5>Charizard</h5>
             <hr/>
+            <h5>Flamethrower</h5>
         </div>
         // Need to use divs because all of my cards will be little divs displaying on my page
     );

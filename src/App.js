@@ -7,6 +7,7 @@ import CardForm from './components/CardForm'; // Need to import CardForm from co
 import Card from './components/Card';
 import {useState} from 'react';
 import axios from 'axios';
+import {navigate} from "@reach/router";
 
 function App() {
 
@@ -52,8 +53,9 @@ function App() {
           console.log(res.data.error.errors) //this will log the errors console
           setError(res.data.error.errors)
         } else {
-          console.log("On submit worked") //otherwise if all is good, let this happen
+          console.log("On submit worked*****************************") //otherwise if all is good, let this happen
           //TODO: Add navigate to back to home page
+          navigate("/") // this will navigate back to the main page
 
           //send form data to database here, basically one component is talking to the parent, and that component is talking to another, here we pass data around
           // We are passing this function to form
@@ -62,20 +64,22 @@ function App() {
       .catch(console.log("Something went wrong, this is catch error"))
   }
 
+  console.log(typeof cardList);
+
   return (
     <div className="App">
       <h1 className="jumbotron"> <i class="nes-ash"></i> Gotta Catch 'Em All <i class="nes-pokeball"></i> </h1> {/* Jumbotron is from bootstrap makes a gray backgeound for  */}
       <div className="row">
         <div className="col-sm-1 side-color"></div> {/* This is based off of the grid system */}
-        <div className="col-sm-3"><h4>Add a card</h4><CardForm makeCard={onSubmitHandler} onChangeHandler={onChangeHandler} error={error}/></div> {/* Added CardForm component here */}
+        <div className="col-sm-3"><h4>Add a card</h4><CardForm onSubmitHandler={onSubmitHandler} onChangeHandler={onChangeHandler} error={error}/></div> {/* Added CardForm component here */}
         {/* props are used to pass data down to a component but we will be kind of be using it to pass it up using the prop makeCard (named that way because thats what it does) */}
 
         <div className="col-sm-8"><h4>Cards You Have</h4>
-        {// here we enter our mapping function, we use mapping through in react instead of for looping, item will be object and i is the index
+        {/* {// here we enter our mapping function, we use mapping through in react instead of for looping, item will be object and i is the index
         // Add NOTES: 
           cardList.map((item, i) => <Card />) //basically everytime we cycle through, we create a card comeponent 
         
-        } 
+        }  */}
         </div>
       </div>
     </div>
